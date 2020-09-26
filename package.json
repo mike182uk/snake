@@ -1,0 +1,36 @@
+{
+  "name": "@mike182uk/snake",
+  "version": "1.0.2",
+  "description": "A simple JavaScript implementation of a Snake game",
+  "main": "./index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "jest",
+    "start": "node ./index.js"
+  },
+  "author": "Michael Barrett <mike182uk@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mike182uk/snake.git"
+  },
+  "homepage": "https://github.com/mike182uk/snake",
+  "bugs": {
+    "url": "https://github.com/mike182uk/snake/issues"
+  },
+  "keywords": [
+    "snake",
+    "game"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "standard": "^14.3.4"
+  },
+  "dependencies": {
+    "log-update": "^4.0.0"
+  }
+}
