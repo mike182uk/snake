@@ -1,6 +1,6 @@
 # Unreleased
 
-- 
+- Improve game border
 
 # 1.0.2
 

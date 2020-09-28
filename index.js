@@ -64,14 +64,14 @@ game.on(EVENT_TICK, ({ matrix, score, status, size }) => {
   matrix = matrix.get()
   let frame = ''
 
-  const topBottomBorder = Array.from({ length: size + 2 }, () => '-').join('')
+  const horizontalBorder = Array.from({ length: size }, () => '─').join('')
 
-  frame += `\nScore: ${score}\n\n`
-  frame += topBottomBorder
+  frame += `\nScore: ${score}\n`
+  frame += `╭${horizontalBorder}╮`
   frame += '\n'
-  frame += matrix.map((row) => `|${row.join('')}|`).join('\n')
+  frame += matrix.map((row) => `│${row.join('')}│`).join('\n')
   frame += '\n'
-  frame += topBottomBorder
+  frame += `╰${horizontalBorder}╯`
   frame += '\n'
 
   if (status === STATUS_FINISHED) {
