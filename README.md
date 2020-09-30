@@ -4,6 +4,10 @@ A simple JavaScript implementation of a [Snake](https://en.wikipedia.org/wiki/Sn
 
 <img src="./demo.gif" />
 
+## Prerequisites
+
+- Node.js >= 10
+
 ## Usage
 
 ```bash

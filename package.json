@@ -24,7 +24,7 @@
     "game"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=10"
   },
   "devDependencies": {
     "jest": "^26.4.2",
