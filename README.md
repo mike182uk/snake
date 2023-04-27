@@ -6,7 +6,7 @@ A simple JavaScript implementation of a [Snake](https://en.wikipedia.org/wiki/Sn
 
 ## Prerequisites
 
-- Node.js >= 10
+- Node.js >= 12
 
 ## Usage
 
