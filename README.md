@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/mike182uk/snake/ci.yml?branch=main&style=flat-square)](https://github.com/mike182uk/snake/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/mike182uk/snake.svg?style=flat-square)](https://www.npmjs.com/package/snake)
 
-A simple JavaScript implementation of a [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)) game
+A simple JavaScript implementation of [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
 
 <img src="./demo.gif" />
 
@@ -32,7 +32,7 @@ Because why not 🤓
 
 1. The snake can only be moved `up`, `down`, `left` or `right`
 2. If the snake collides with a boundary the game is over
-3. If the snake collides with its self the game is over
+3. If the snake collides with itself the game is over
 4. The size of the snake increases by 1 whenever food is consumed
 5. The score is: the size of the snake - 1 (as the game starts with the snake already having a size of 1)
 
@@ -43,7 +43,7 @@ Taking a peek at the source is probably best way to see how things tick (pun int
 #### The game loop
 
 The game runs on a loop. The loop is started when `Game.start` is called. The speed at which the loop iterates is dictated by the value passed to `Game.start` (in `ms`). On each iteration of the loop (a `tick`) the state of the game is computed and an event (`tick`) is emitted containing the game state (the `Game` instance is an event emitter). On each `tick` the snake moves 1 place in the direction set. This is repeated until an exit condition: 
-   1. The snake collides with a boundary / its self
+   1. The snake collides with a boundary / itself
    2. The user executes an `exit` action
 
 #### Input
