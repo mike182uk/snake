@@ -21,7 +21,7 @@ const game = new Game({
   size: 14, // 14x14
   emptyValue: ' ',
   snakeValue: '*',
-  extensionValue: 'o'
+  foodValue: 'o'
 })
 
 /**

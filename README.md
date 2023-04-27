@@ -1,5 +1,8 @@
 # snake
 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mike182uk/snake/ci.yml?branch=main&style=flat-square)](https://github.com/mike182uk/snake/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/mike182uk/snake.svg?style=flat-square)](https://www.npmjs.com/package/snake)
+
 A simple JavaScript implementation of a [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)) game
 
 <img src="./demo.gif" />
@@ -30,7 +33,7 @@ Because why not 🤓
 1. The snake can only be moved `up`, `down`, `left` or `right`
 2. If the snake collides with a boundary the game is over
 3. If the snake collides with its self the game is over
-4. The size of the snake increases by 1 whenever the snake extension is consumed
+4. The size of the snake increases by 1 whenever food is consumed
 5. The score is: the size of the snake - 1 (as the game starts with the snake already having a size of 1)
 
 ### Internals
@@ -62,11 +65,11 @@ The event handler is passed a `Matrix` instance which represents the placement o
 0S0000
 0S0000
 0S0000
-0000E0
+0000F0
 000000
 ```
 
-`0` = empty `S` = snake `E` = snake extension
+`0` = empty `S` = snake `F` = food
 
 _The above is for illustrative purposes. The actual values used in the matrix will be different (and are configurable)._
 
@@ -76,6 +79,6 @@ The `score`, `status` (i.e `running`, `finished` etc.) and `size` of the matrix 
 
 #### Why is the matrix that is used by the renderer generated on each tick instead of being persisted for the life of the game?
 
-While this seems like a more sane approach, it turned out to be a pain to keep the matrix up to date based on events happening in the game (i.e having to unset values in the matrix when the snake moved, having to relocate the snake extension when it had been consumed etc.). Also, having to determine where things are placed in the game meant having to iterate over the rows in the matrix multiple times, which was inefficient. 
+While this seems like a more sane approach, it turned out to be a pain to keep the matrix up to date based on events happening in the game (i.e having to unset values in the matrix when the snake moved, having to relocate the food when it has been consumed etc.). Also, having to determine where things are placed in the game meant having to iterate over the rows in the matrix multiple times, which was inefficient. 
 
-The alternative approach I took was persisting the coordinates for each part of the snake and the location of the snake extension (on a matrix that would be generated in the future - we can calculate these coordinates before generating the matrix as we know the size of the matrix upfront), then generate a matrix on each tick of the game loop, compositing the snake and snake extension on top of it. This greatly simplifies the logic and increases the efficiency although requires a different mental model when thinking about the game state.
+The alternative approach I took was persisting the coordinates for each part of the snake and the location of the food (on a matrix that would be generated in the future - we can calculate these coordinates before generating the matrix as we know the size of the matrix upfront), then generate a matrix on each tick of the game loop, compositing the snake and food on top of it. This greatly simplifies the logic and increases the efficiency although requires a different mental model when thinking about the game state.
