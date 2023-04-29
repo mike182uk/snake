@@ -1,7 +1,7 @@
 {
   "name": "@mike182uk/snake",
   "version": "1.0.2",
-  "description": "A simple JavaScript implementation of a Snake game",
+  "description": "A simple JavaScript implementation of Snake",
   "main": "./index.js",
   "bin": "./index.js",
   "scripts": {
